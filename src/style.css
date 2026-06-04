@@ -1,0 +1,120 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+@keyframes revealContainer {
+    0% { opacity: 0; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes softPulse {
+    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
+    100% { box-shadow: 0 0 0 8px rgba(40, 167, 69, 0); }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4158D0 0%, #50c866 46%, #FFCC70 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px; /* Μειωμένο padding εξωτερικά */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px; /* Λίγο πιο πλατύ για να χωράει το side-by-side */
+    width: 95%;
+    max-height: 90vh; /* Περιορισμός ύψους για να μην βγαίνει εκτός οθόνης */
+    background: rgba(255, 255, 255, 0.98);
+    padding:25px; /* Πιο compact */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: revealContainer 0.5s ease-out;
+    overflow-y: auto; /* Αν σε μικρή οθόνη δεν χωράει, θα βγάζει scrollbar μόνο μέσα στο λευκό */
+}
+
+nav {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4158D0;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 0.95rem;
+}
+
+/* Flexbox για να μπει ο πίνακας και η φόρμα δίπλα-δίπλα */
+.main-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Σε κινητά θα μπαίνουν το ένα κάτω από το άλλο */
+}
+
+.section {
+    flex: 1;
+    min-width: 300px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.85rem; /* Πιο μικρά γράμματα στον πίνακα */
+}
+
+th {
+    background: linear-gradient(90deg, #4158D0, #5086c8);
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+label {
+    display: block;
+    margin-top: 10px; /* Μειωμένο margin */
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px 12px; /* Πιο compact inputs */
+    margin-top: 4px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 60px; /* Περιορισμένο ύψος στο μήνυμα */
+    resize: none;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    animation: softPulse 2s infinite;
+}
